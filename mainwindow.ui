@@ -333,9 +333,19 @@
      <string>?</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuLexer">
+    <property name="title">
+     <string>Lexer</string>
+    </property>
+    <addaction name="actionBash"/>
+    <addaction name="actionLaTeX"/>
+    <addaction name="actionMarkdown"/>
+    <addaction name="actionOrg_mode"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menu"/>
+   <addaction name="menuLexer"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -368,6 +378,26 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionLaTeX">
+   <property name="text">
+    <string>LaTeX</string>
+   </property>
+  </action>
+  <action name="actionBash">
+   <property name="text">
+    <string>Bash</string>
+   </property>
+  </action>
+  <action name="actionMarkdown">
+   <property name="text">
+    <string>Markdown</string>
+   </property>
+  </action>
+  <action name="actionOrg_mode">
+   <property name="text">
+    <string>org-mode</string>
    </property>
   </action>
  </widget>

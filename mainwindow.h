@@ -38,6 +38,10 @@ public slots:
     void beginEnd();
     void hiliteCurrentLine();
     void saveFile();
+    void setLexerLaTeX();
+//    void setLexerBash();
+    void setLexerOrgMode();
+    void setLexerMarkdown();
 };
 
 #endif // MAINWINDOW_H

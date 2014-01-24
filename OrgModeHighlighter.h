@@ -10,8 +10,8 @@
 *    Description : try to highlight some LaTeX code using QSyntaxHighlighter
 *    
 */
-#ifndef HIGHLIGHTER_H
-#define HIGHLIGHTER_H
+#ifndef ORGHIGHLIGHTER_H
+#define ORGHIGHLIGHTER_H
 
 #include <QSyntaxHighlighter>
 
@@ -20,12 +20,12 @@
 
 class QTextDocument;
 
-class Highlighter : public QSyntaxHighlighter
+class OrgModeHighlighter : public QSyntaxHighlighter
 {
 Q_OBJECT
 
 public:
-Highlighter(QTextDocument *parent = 0);
+OrgModeHighlighter(QTextDocument *parent = 0);
 
 protected:
 void highlightBlock(const QString &text);
@@ -54,4 +54,4 @@ QTextCharFormat functionFormat;
 };
 
 
-#endif // HIGHLIGHTER_H
+#endif // ORGHIGHLIGHTER_H

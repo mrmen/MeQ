@@ -13,7 +13,9 @@
 */
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "highlighter.h"
+#include "OrgModeHighlighter.h"
+#include "MarkdownHighlighter.h"
+#include "LaTeXHighlighter.h"
 #include <iostream>
 #include <QTextCodec>
 #include <QInputDialog>
@@ -29,6 +31,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->ButtonLayout->setAlignment(Qt::AlignLeft);
     connect(ui->actionOpen,SIGNAL(triggered()),this,SLOT(open()));
     connect(ui->actionSave,SIGNAL(triggered()),this,SLOT(saveFile()));
+    connect(ui->actionOrg_mode,SIGNAL(triggered()),this,SLOT(setLexerOrgMode()));
+    connect(ui->actionMarkdown,SIGNAL(triggered()),this,SLOT(setLexerMarkdown()));
+    connect(ui->actionLaTeX,SIGNAL(triggered()),this,SLOT(setLexerLaTeX()));
 
     // connect buttons
     connect(ui->dollarButton,SIGNAL(clicked()),this,SLOT(printButtonText()));
@@ -49,7 +54,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
     // do the higlight stuff
-    Highlighter *highlighter = new Highlighter(ui->editor->document());
+    //Highlighter *highlighter = new Highlighter(ui->editor->document());
 }
 
 MainWindow::~MainWindow()
@@ -75,7 +80,7 @@ void MainWindow::open(){
     ui->editor->setFont(font);
 
     // do the higlight stuff
-    Highlighter *highlighter = new Highlighter(ui->editor->document());
+    //Highlighter *highlighter = new Highlighter(ui->editor->document());
 }
 
 
@@ -122,4 +127,17 @@ void MainWindow::saveFile(){
     file.write(ui->editor->toPlainText().toUtf8());
     file.close();
     // wait for file close
+}
+
+
+void MainWindow::setLexerOrgMode(){
+    OrgModeHighlighter *orgmodehighlighter =  new OrgModeHighlighter(ui->editor->document());
+}
+
+void MainWindow::setLexerLaTeX(){
+    LaTeXHighlighter *latexhighlighter =  new LaTeXHighlighter(ui->editor->document());
+}
+
+void MainWindow::setLexerMarkdown(){
+    MarkdownHighlighter *markdownhighlighter =  new MarkdownHighlighter(ui->editor->document());
 }

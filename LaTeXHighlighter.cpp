@@ -12,9 +12,9 @@
 */
 #include <QtGui>
 
-#include "highlighter.h"
+#include "LaTeXHighlighter.h"
 
-Highlighter::Highlighter(QTextDocument *parent)
+LaTeXHighlighter::LaTeXHighlighter(QTextDocument *parent)
     : QSyntaxHighlighter(parent)
 {
     HighlightingRule rule;
@@ -62,21 +62,6 @@ Highlighter::Highlighter(QTextDocument *parent)
 //    rule.format = functionFormat;
 //    highlightingRules.append(rule);
 //    functionFormat.setFontWeight(QFont::Normal);
-
-
-// markdown-mode
-    functionFormat.setForeground(Qt::blue);
-    rule.pattern = QRegExp("^#+ .*");
-    rule.format = functionFormat;
-    highlightingRules.append(rule);
-    // -
-    functionFormat.setForeground(Qt::blue);
-    functionFormat.setFontWeight(QFont::Bold);
-    rule.pattern = QRegExp("^[ \t]*(\\-|\\*)");
-    rule.format = functionFormat;
-    highlightingRules.append(rule);
-    functionFormat.setFontWeight(QFont::Normal);
-
 
 
     //
@@ -132,7 +117,7 @@ Highlighter::Highlighter(QTextDocument *parent)
     commentEndExpression = QRegExp("\\*/");
 }
 
-void Highlighter::highlightBlock(const QString &text)
+void LaTeXHighlighter::highlightBlock(const QString &text)
 {
     foreach (const HighlightingRule &rule, highlightingRules) {
         QRegExp expression(rule.pattern);
