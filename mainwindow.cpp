@@ -69,7 +69,7 @@ void MainWindow::open(){
     if(!filename.isEmpty()){
         QFile file(filename);
         if (file.open(QFile::ReadOnly | QFile::Text)){
-            ui->editor->setPlainText(file.readAll());
+            ui->editor->setPlainText(QString::fromUtf8(file.readAll()));
         }
     }
     // setup editor

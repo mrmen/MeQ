@@ -6,6 +6,7 @@ TEMPLATE = app
 TARGET = 
 DEPENDPATH += .
 INCLUDEPATH += .
+LIBS = -static-libgcc -static-libstdc++
 
 # Input
 HEADERS += highlighter.h \
