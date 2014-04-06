@@ -47,6 +47,11 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->underButton,SIGNAL(clicked()),this,SLOT(printButtonText()));
     connect(ui->aboveButton,SIGNAL(clicked()),this,SLOT(printButtonText()));
 
+
+    connect(ui->actionSolarized_dark,SIGNAL(triggered()),this,SLOT(setThemeSolarizedDark()));
+    connect(ui->actionZenburn,SIGNAL(triggered()),this,SLOT(setThemeZenburn()));
+
+
     connect(ui->beginEndButton,SIGNAL(clicked()),this,SLOT(beginEnd()));
 
     connect(ui->editor,SIGNAL(cursorPositionChanged()),this,SLOT(hiliteCurrentLine()));
@@ -140,4 +145,12 @@ void MainWindow::setLexerLaTeX(){
 
 void MainWindow::setLexerMarkdown(){
     MarkdownHighlighter *markdownhighlighter =  new MarkdownHighlighter(ui->editor->document());
+}
+
+void MainWindow::setThemeSolarizedDark(){
+    ui->editor->setStyleSheet("background : #002b36; color : #657b83");
+}
+
+void MainWindow::setThemeZenburn(){
+    ui->editor->setStyleSheet("background : #3f3f3f; color : #dcdccc;");
 }

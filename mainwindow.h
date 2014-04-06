@@ -42,6 +42,9 @@ public slots:
 //    void setLexerBash();
     void setLexerOrgMode();
     void setLexerMarkdown();
+
+    void setThemeSolarizedDark();
+    void setThemeZenburn();
 };
 
 #endif // MAINWINDOW_H

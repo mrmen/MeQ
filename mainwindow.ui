@@ -342,10 +342,18 @@
     <addaction name="actionMarkdown"/>
     <addaction name="actionOrg_mode"/>
    </widget>
+   <widget class="QMenu" name="menuTheme">
+    <property name="title">
+     <string>Theme</string>
+    </property>
+    <addaction name="actionZenburn"/>
+    <addaction name="actionSolarized_dark"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menu"/>
    <addaction name="menuLexer"/>
+   <addaction name="menuTheme"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -398,6 +406,16 @@
   <action name="actionOrg_mode">
    <property name="text">
     <string>org-mode</string>
+   </property>
+  </action>
+  <action name="actionZenburn">
+   <property name="text">
+    <string>zenburn</string>
+   </property>
+  </action>
+  <action name="actionSolarized_dark">
+   <property name="text">
+    <string>solarized-dark</string>
    </property>
   </action>
  </widget>
