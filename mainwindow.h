@@ -16,6 +16,9 @@
 
 #include <QMainWindow>
 #include <QTextCursor>
+#include <QString>
+#include "finddialog.h"
+#include "findreplacedialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,17 +28,36 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+
+protected:
+     void closeEvent(QCloseEvent *event);
+     bool eventFilter(QObject*, QEvent*);
+     void changeEvent(QEvent *e);
+     void createActions();
+
+
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    QString bufferName;
+    QString keyCC;
+
 
 private:
     Ui::MainWindow *ui;
+    FindDialog *m_findDialog;
+    FindReplaceDialog *m_findReplaceDialog;
+
+
+private slots:
+    void findDialog();
+    void findReplaceDialog();
 
 public slots:
     void open();
     void printButtonText();
     void beginEnd();
+    void addItem();
     void hiliteCurrentLine();
     void saveFile();
     void setLexerLaTeX();
@@ -45,6 +67,9 @@ public slots:
 
     void setThemeSolarizedDark();
     void setThemeZenburn();
+
+    void updateFont(const QFont &font);
+    void updateFontSize(int);
 };
 
 #endif // MAINWINDOW_H

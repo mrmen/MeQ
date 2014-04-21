@@ -4,14 +4,14 @@
 *    <tetcheve (at) gmail .com>
 *
 *    Created on : 28-12-2013 20:36:29
-*    Time-stamp: <28-12-2013 20:38:28>
+*    Time-stamp: <21-04-2014 10:40:11>
 *
 *    File name : highlighter.cpp
 *    Description : try to highlight some LaTeX code using QSyntaxHighlighter
 *    
 */
+//#include <QtWidgets>
 #include <QtGui>
-
 #include "MarkdownHighlighter.h"
 
 MarkdownHighlighter::MarkdownHighlighter(QTextDocument *parent)

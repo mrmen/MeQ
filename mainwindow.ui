@@ -18,7 +18,67 @@
     <item row="0" column="0">
      <layout class="QVBoxLayout" name="MainLayout">
       <item>
-       <layout class="QHBoxLayout" name="ButtonLayout" stretch="0,0,0,0,0,0,0,0,0,0,0">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="beginEndButton">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Begin/End</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFontComboBox" name="fontComboBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="spinBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="minimum">
+           <number>8</number>
+          </property>
+          <property name="maximum">
+           <number>36</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="ButtonLayout" stretch="0,0,0,0,0,0,0,0,0,0">
         <property name="sizeConstraint">
          <enum>QLayout::SetNoConstraint</enum>
         </property>
@@ -270,26 +330,6 @@
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QPushButton" name="beginEndButton">
-          <property name="minimumSize">
-           <size>
-            <width>100</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Begin/End</string>
-          </property>
-         </widget>
-        </item>
        </layout>
       </item>
       <item>
@@ -349,11 +389,29 @@
     <addaction name="actionZenburn"/>
     <addaction name="actionSolarized_dark"/>
    </widget>
+   <widget class="QMenu" name="menuLaTeX">
+    <property name="title">
+     <string>LaTeX</string>
+    </property>
+    <addaction name="actionBeginEnd"/>
+    <addaction name="actionItem"/>
+   </widget>
+   <widget class="QMenu" name="menuSearch">
+    <property name="title">
+     <string>Search</string>
+    </property>
+    <addaction name="actionFind"/>
+    <addaction name="actionReplace"/>
+    <addaction name="actionFindNext"/>
+    <addaction name="actionFindPrevious"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menu"/>
    <addaction name="menuLexer"/>
    <addaction name="menuTheme"/>
+   <addaction name="menuLaTeX"/>
+   <addaction name="menuSearch"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -416,6 +474,36 @@
   <action name="actionSolarized_dark">
    <property name="text">
     <string>solarized-dark</string>
+   </property>
+  </action>
+  <action name="actionBeginEnd">
+   <property name="text">
+    <string>BeginEnd</string>
+   </property>
+  </action>
+  <action name="actionItem">
+   <property name="text">
+    <string>item</string>
+   </property>
+  </action>
+  <action name="actionFind">
+   <property name="text">
+    <string>Find</string>
+   </property>
+  </action>
+  <action name="actionReplace">
+   <property name="text">
+    <string>Replace</string>
+   </property>
+  </action>
+  <action name="actionFindNext">
+   <property name="text">
+    <string>Find Next</string>
+   </property>
+  </action>
+  <action name="actionFindPrevious">
+   <property name="text">
+    <string>Find Previous</string>
    </property>
   </action>
  </widget>
